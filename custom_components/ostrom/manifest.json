@@ -1,6 +1,7 @@
 {
   "domain": "ostrom",
   "name": "Ostrom Energy",
+  "version": "2025.6.0",
   "codeowners": ["@panhans"],
   "config_flow": true,
   "dependencies": [],
