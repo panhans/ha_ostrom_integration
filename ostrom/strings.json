@@ -1,0 +1,46 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "description": "Please create your client ID and client secret here: [Ostrom Developer Protal]({link}).",
+        "data": {
+          "client_id": "Client ID",
+          "client_secret": "Client Secret",
+          "zip_code": "ZIP Code",
+          "start": "Start",
+          "end": "End",
+          "sandbox_mode": "Sandbox/Test Mode"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "[%key:common::config_flow::error::cannot_connect%]",
+      "invalid_auth": "[%key:common::config_flow::error::invalid_auth%]",
+      "unknown": "[%key:common::config_flow::error::unknown%]",
+      "invalid_zip_code": "Invalid ZIP code"
+    },
+    "abort": {
+      "already_configured": "[%key:common::config_flow::abort::already_configured_device%]"
+    }
+  },
+  "services": {
+    "get_price_data": {
+      "name": "Get Price Data",
+      "description": "Fetches price data between a start and end date.",
+      "fields": {
+        "entity_id": {
+          "name": "Entity ID",
+          "description": "The entity ID of the Ostrom sensor"
+        },
+        "start": {
+          "name": "Start Date",
+          "description": "The beginning of the time range in ISO format (e.g., 2025-06-13T10:00:23)"
+        },
+        "end": {
+          "name": "End Date",
+          "description": "The end of the time range in ISO format"
+        }
+      }
+    }
+  }
+}

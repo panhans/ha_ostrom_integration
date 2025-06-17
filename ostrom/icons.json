@@ -1,0 +1,7 @@
+{
+  "services": {
+    "get_price_data": {
+      "service": "mdi:cash-fast"
+    }
+  }
+}

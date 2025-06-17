@@ -1,0 +1,100 @@
+{
+  "data": [
+    {
+      "date": "2023-06-12T00:00:00.000Z",
+      "netMwhPrice": 85.02,
+      "netKwhPrice": 8.51,
+      "grossKwhPrice": 10.12,
+      "netKwhTaxAndLevies": 9.53,
+      "grossKwhTaxAndLevies": 11.34,
+      "netMonthlyOstromBaseFee": 5.05,
+      "grossMonthlyOstromBaseFee": 6,
+      "netMonthlyGridFees": 7.28,
+      "grossMonthlyGridFees": 8.66
+    },
+    {
+      "date": "2023-06-12T01:00:00.000Z",
+      "netMwhPrice": 81.63,
+      "netKwhPrice": 8.17,
+      "grossKwhPrice": 9.72,
+      "netKwhTaxAndLevies": 9.53,
+      "grossKwhTaxAndLevies": 11.34,
+      "netMonthlyOstromBaseFee": 5.05,
+      "grossMonthlyOstromBaseFee": 6,
+      "netMonthlyGridFees": 7.28,
+      "grossMonthlyGridFees": 8.66
+    },
+    {
+      "date": "2023-06-12T02:00:00.000Z",
+      "netMwhPrice": 83.95,
+      "netKwhPrice": 8.4,
+      "grossKwhPrice": 10,
+      "netKwhTaxAndLevies": 9.53,
+      "grossKwhTaxAndLevies": 11.34,
+      "netMonthlyOstromBaseFee": 5.05,
+      "grossMonthlyOstromBaseFee": 6,
+      "netMonthlyGridFees": 7.28,
+      "grossMonthlyGridFees": 8.66
+    },
+    {
+      "date": "2023-06-12T03:00:00.000Z",
+      "netMwhPrice": 95.08,
+      "netKwhPrice": 9.51,
+      "grossKwhPrice": 11.32,
+      "netKwhTaxAndLevies": 9.53,
+      "grossKwhTaxAndLevies": 11.34,
+      "netMonthlyOstromBaseFee": 5.05,
+      "grossMonthlyOstromBaseFee": 6,
+      "netMonthlyGridFees": 7.28,
+      "grossMonthlyGridFees": 8.66
+    },
+    {
+      "date": "2023-06-12T04:00:00.000Z",
+      "netMwhPrice": 107.43,
+      "netKwhPrice": 10.75,
+      "grossKwhPrice": 12.79,
+      "netKwhTaxAndLevies": 9.53,
+      "grossKwhTaxAndLevies": 11.34,
+      "netMonthlyOstromBaseFee": 5.05,
+      "grossMonthlyOstromBaseFee": 6,
+      "netMonthlyGridFees": 7.28,
+      "grossMonthlyGridFees": 8.66
+    },
+    {
+      "date": "2023-06-12T05:00:00.000Z",
+      "netMwhPrice": 126.84,
+      "netKwhPrice": 12.69,
+      "grossKwhPrice": 15.1,
+      "netKwhTaxAndLevies": 9.53,
+      "grossKwhTaxAndLevies": 11.34,
+      "netMonthlyOstromBaseFee": 5.05,
+      "grossMonthlyOstromBaseFee": 6,
+      "netMonthlyGridFees": 7.28,
+      "grossMonthlyGridFees": 8.66
+    },
+    {
+      "date": "2023-06-12T06:00:00.000Z",
+      "netMwhPrice": 124.39,
+      "netKwhPrice": 12.44,
+      "grossKwhPrice": 14.81,
+      "netKwhTaxAndLevies": 9.53,
+      "grossKwhTaxAndLevies": 11.34,
+      "netMonthlyOstromBaseFee": 5.05,
+      "grossMonthlyOstromBaseFee": 6,
+      "netMonthlyGridFees": 7.28,
+      "grossMonthlyGridFees": 8.66
+    },
+    {
+      "date": "2023-06-12T07:00:00.000Z",
+      "netMwhPrice": 106.01,
+      "netKwhPrice": 10.61,
+      "grossKwhPrice": 12.62,
+      "netKwhTaxAndLevies": 9.53,
+      "grossKwhTaxAndLevies": 11.34,
+      "netMonthlyOstromBaseFee": 5.05,
+      "grossMonthlyOstromBaseFee": 6,
+      "netMonthlyGridFees": 7.28,
+      "grossMonthlyGridFees": 8.66
+    }
+  ]
+}

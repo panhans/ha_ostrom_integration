@@ -1,0 +1,16 @@
+get_price_data:
+  fields:
+    entity_id:
+      required: true
+      selector:
+        entity:
+          domain: sensor
+          integration: ostrom
+    start:
+      required: true
+      selector:
+        datetime:
+    end:
+      required: true
+      selector:
+        datetime:

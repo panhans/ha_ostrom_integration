@@ -1,0 +1,14 @@
+{
+  "domain": "ostrom",
+  "name": "Ostrom Energy",
+  "codeowners": ["@panhans"],
+  "config_flow": true,
+  "dependencies": [],
+  "documentation": "https://www.home-assistant.io/integrations/ostrom",
+  "homekit": {},
+  "iot_class": "cloud_polling",
+  "quality_scale": "bronze",
+  "requirements": [],
+  "ssdp": [],
+  "zeroconf": []
+}
