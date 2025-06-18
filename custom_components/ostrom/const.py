@@ -22,4 +22,4 @@ EXPIRES_AT = "expires_at"
 CONF_PROD = "Productive"
 CONF_SANDBOX = "sandbox_mode"
 
-TIMEOUT = 10 | float
+TIMEOUT = float(10)
