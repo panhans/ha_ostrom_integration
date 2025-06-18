@@ -129,7 +129,7 @@ class OstromPriceSensor(SensorEntity):
         self._attr_native_value = None
         self._delegate: OstromPrice | None = None
 
-    async def async_update(self, hass: HomeAssistant) -> None:
+    async def async_update(self) -> None:
         """Fetch new state data for the sensor."""
 
         key_datetime = datetime.now().replace(minute=0, second=0, microsecond=0)
