@@ -5,7 +5,7 @@
   "codeowners": ["@panhans"],
   "config_flow": true,
   "dependencies": [],
-  "documentation": "https://www.home-assistant.io/integrations/ostrom",
+  "documentation": "https://github.com/panhans/ha_ostrom_integration",
   "iot_class": "cloud_polling",
   "quality_scale": "bronze",
   "requirements": []
