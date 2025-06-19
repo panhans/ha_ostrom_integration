@@ -1,4 +1,4 @@
-# ⚡️ Ostrom Integtraion for Home Assistant
+# ⚡️ Ostrom integration for Home Assistant
 
 This integration provides a sensor and a service for querying electricity prices from Ostrom. The sensor is updated hourly and displays the current electricity price.
 With the service, you can query the daily prices. Based on this, you can create automations to start devices, for example, to run household appliances like washing machines when electricity prices are low.
