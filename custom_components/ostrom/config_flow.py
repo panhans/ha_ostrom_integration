@@ -13,7 +13,7 @@ from homeassistant.core import HomeAssistant
 from homeassistant.exceptions import HomeAssistantError
 from homeassistant.helpers import config_validation as cv
 
-from .const import CONF_SANDBOX, CONF_ZIP_CODE, DOMAIN, OSTROM_DEV_PORTAL_URL
+from .const import CONF_SANDBOX, CONF_ZIP_CODE, DOMAIN
 from .helper import is_valid_plz
 from .ostrom_rest import OstromClient
 
@@ -95,9 +95,6 @@ class ConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
         return self.async_show_form(
             step_id="user",
             data_schema=STEP_USER_DATA_SCHEMA,
-            description_placeholders={
-                "link": OSTROM_DEV_PORTAL_URL,
-            },
             errors=errors,
         )
 
