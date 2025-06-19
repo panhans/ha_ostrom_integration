@@ -2,14 +2,12 @@
   "config": {
     "step": {
       "user": {
-        "description": "Please create your client ID and client secret here: [Ostrom Developer Protal]({link}).",
+        "description": "Please visit the [Ostrom Webseite](https://www.ostrom.de/calculate-tariff), perform a price check, and then copy the City ID from the URL.",
         "data": {
-          "client_id": "Client ID",
-          "client_secret": "Client Secret",
           "zip_code": "ZIP Code",
-          "start": "Start",
-          "end": "End",
-          "sandbox_mode": "Sandbox/Test Mode"
+          "city_id": "City ID",
+          "tariff": "Tariff",
+          "usage": "Usage (kWh)"
         }
       }
     },
@@ -17,28 +15,25 @@
       "cannot_connect": "[%key:common::config_flow::error::cannot_connect%]",
       "invalid_auth": "[%key:common::config_flow::error::invalid_auth%]",
       "unknown": "[%key:common::config_flow::error::unknown%]",
-      "invalid_zip_code": "Invalid ZIP code"
+      "invalid_zip_code": "Invalid ZIP code",
+      "invalid_city_id": "Invalid City ID"
     },
     "abort": {
       "already_configured": "[%key:common::config_flow::abort::already_configured_device%]"
     }
   },
   "services": {
-    "get_price_data": {
-      "name": "Get Price Data",
-      "description": "Fetches price data between a start and end date.",
+    "spot_prices": {
+      "name": "Spot Prices",
+      "description": "Fetches price data hourly of a day or monthly of a year.",
       "fields": {
         "entity_id": {
           "name": "Entity ID",
           "description": "The entity ID of the Ostrom sensor"
         },
-        "start": {
-          "name": "Start Date",
-          "description": "The beginning of the time range in ISO format (e.g., 2025-06-13T10:00:23)"
-        },
-        "end": {
-          "name": "End Date",
-          "description": "The end of the time range in ISO format"
+        "resolution": {
+          "name": "Resolution",
+          "description": "Daily or monthly resolution"
         }
       }
     }

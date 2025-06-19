@@ -1,4 +1,4 @@
-get_price_data:
+spot_prices:
   fields:
     entity_id:
       required: true
@@ -6,11 +6,12 @@ get_price_data:
         entity:
           domain: sensor
           integration: ostrom
-    start:
+    resolution:
       required: true
       selector:
-        datetime:
-    end:
-      required: true
-      selector:
-        datetime:
+        select:
+          options:
+            - value: hourly
+              label: Hourly
+            - value: monthly
+              label: Monthly

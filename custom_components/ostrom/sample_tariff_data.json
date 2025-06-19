@@ -1,0 +1,67 @@
+{
+  "basicProvider": {
+    "tariff": 131,
+    "basicFee": 2.21,
+    "networkFee": 9.15,
+    "unitPricePerkWH": 38.54,
+    "energyConsumption": 308
+  },
+  "ostrom": [
+    {
+      "productCode": "basisProdukt",
+      "tariff": 86,
+      "savings": 45,
+      "basicFee": 6,
+      "networkFee": 9.15,
+      "unitPricePerkWH": 22.78,
+      "tariffWithStormPreisBremse": 128,
+      "stromPreisBremseUnitPrice": 40,
+      "accumulatedUnitPriceWithStromPreisBremse": 112.6,
+      "unitPrice": 70.17,
+      "energyConsumption": 308,
+      "basePriceBrutto": 181.77,
+      "workingPriceBrutto": 22.7778,
+      "workingPriceNetto": 19.141,
+      "meterChargeBrutto": 0,
+      "workingPricePowerTax": 2.05,
+      "yearly": {
+        "savings": 540
+      }
+    },
+    {
+      "productCode": "basisDynamic",
+      "tariff": 85,
+      "savings": 46,
+      "basicFee": 6,
+      "networkFee": 9.15,
+      "unitPricePerkWH": 12.87,
+      "tariffWithStormPreisBremse": 122,
+      "stromPreisBremseUnitPrice": 40,
+      "accumulatedUnitPriceWithStromPreisBremse": 106.49,
+      "unitPrice": 39.64,
+      "energyConsumption": 308,
+      "basePriceBrutto": 181.77,
+      "workingPriceBrutto": 12.8609,
+      "workingPriceNetto": 10.8075,
+      "meterChargeBrutto": 0,
+      "workingPricePowerTax": 2.05,
+      "yearly": {
+        "savings": 552
+      },
+      "averageHourlyPriceToday": 22.38,
+      "minHourlyPriceToday": 12.6,
+      "maxHourlyPriceToday": 33.75
+    }
+  ],
+  "footprint": {
+    "usage": 3700,
+    "kgCO2Emissions": 1902
+  },
+  "isPendingApplicationAllowed": true,
+  "status": "LIVE",
+  "partnerName": null,
+  "houseHoldContractRange": {
+    "numberOfHouseholds": 369,
+    "householdsRangeInKm": 50
+  }
+}

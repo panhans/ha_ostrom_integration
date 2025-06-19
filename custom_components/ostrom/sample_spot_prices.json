@@ -1,0 +1,324 @@
+{
+  "day": {
+    "averagePrice": 25.43,
+    "prices": [
+      {
+        "date": "2025-06-19T00:00:00.000Z",
+        "dateUTC": "2025-06-18T22:00:00.000Z",
+        "price": 11.22,
+        "grossKwhPrice": 13.36,
+        "mWhPriceInEuros": 112.2,
+        "hour": "00",
+        "taxesAndLevies": 20.89,
+        "priceWithTaxesAndLevies": 32.11
+      },
+      {
+        "date": "2025-06-19T01:00:00.000Z",
+        "dateUTC": "2025-06-18T23:00:00.000Z",
+        "price": 10.64,
+        "grossKwhPrice": 12.67,
+        "mWhPriceInEuros": 106.4,
+        "hour": "01",
+        "taxesAndLevies": 20.78,
+        "priceWithTaxesAndLevies": 31.42
+      },
+      {
+        "date": "2025-06-19T02:00:00.000Z",
+        "dateUTC": "2025-06-19T00:00:00.000Z",
+        "price": 10.53,
+        "grossKwhPrice": 12.53,
+        "mWhPriceInEuros": 105.29,
+        "hour": "02",
+        "taxesAndLevies": 20.76,
+        "priceWithTaxesAndLevies": 31.29
+      },
+      {
+        "date": "2025-06-19T03:00:00.000Z",
+        "dateUTC": "2025-06-19T01:00:00.000Z",
+        "price": 9.96,
+        "grossKwhPrice": 11.85,
+        "mWhPriceInEuros": 99.51,
+        "hour": "03",
+        "taxesAndLevies": 20.65,
+        "priceWithTaxesAndLevies": 30.61
+      },
+      {
+        "date": "2025-06-19T04:00:00.000Z",
+        "dateUTC": "2025-06-19T02:00:00.000Z",
+        "price": 10.1,
+        "grossKwhPrice": 12.02,
+        "mWhPriceInEuros": 100.94,
+        "hour": "04",
+        "taxesAndLevies": 20.67,
+        "priceWithTaxesAndLevies": 30.77
+      },
+      {
+        "date": "2025-06-19T05:00:00.000Z",
+        "dateUTC": "2025-06-19T03:00:00.000Z",
+        "price": 9.57,
+        "grossKwhPrice": 11.39,
+        "mWhPriceInEuros": 95.68,
+        "hour": "05",
+        "taxesAndLevies": 20.57,
+        "priceWithTaxesAndLevies": 30.14
+      },
+      {
+        "date": "2025-06-19T06:00:00.000Z",
+        "dateUTC": "2025-06-19T04:00:00.000Z",
+        "price": 10.16,
+        "grossKwhPrice": 12.08,
+        "mWhPriceInEuros": 101.51,
+        "hour": "06",
+        "taxesAndLevies": 20.69,
+        "priceWithTaxesAndLevies": 30.85
+      },
+      {
+        "date": "2025-06-19T07:00:00.000Z",
+        "dateUTC": "2025-06-19T05:00:00.000Z",
+        "price": 8.93,
+        "grossKwhPrice": 10.63,
+        "mWhPriceInEuros": 89.25,
+        "hour": "07",
+        "taxesAndLevies": 20.45,
+        "priceWithTaxesAndLevies": 29.38
+      },
+      {
+        "date": "2025-06-19T08:00:00.000Z",
+        "dateUTC": "2025-06-19T06:00:00.000Z",
+        "price": 7.13,
+        "grossKwhPrice": 8.48,
+        "mWhPriceInEuros": 71.25,
+        "hour": "08",
+        "taxesAndLevies": 20.11,
+        "priceWithTaxesAndLevies": 27.24
+      },
+      {
+        "date": "2025-06-19T09:00:00.000Z",
+        "dateUTC": "2025-06-19T07:00:00.000Z",
+        "price": 0.09,
+        "grossKwhPrice": 0.11,
+        "mWhPriceInEuros": 0.86,
+        "hour": "09",
+        "taxesAndLevies": 18.77,
+        "priceWithTaxesAndLevies": 18.86
+      },
+      {
+        "date": "2025-06-19T10:00:00.000Z",
+        "dateUTC": "2025-06-19T08:00:00.000Z",
+        "price": -0.13,
+        "grossKwhPrice": -0.15,
+        "mWhPriceInEuros": -1.33,
+        "hour": "10",
+        "taxesAndLevies": 18.73,
+        "priceWithTaxesAndLevies": 18.6
+      },
+      {
+        "date": "2025-06-19T11:00:00.000Z",
+        "dateUTC": "2025-06-19T09:00:00.000Z",
+        "price": -2.99,
+        "grossKwhPrice": -3.56,
+        "mWhPriceInEuros": -29.98,
+        "hour": "11",
+        "taxesAndLevies": 18.19,
+        "priceWithTaxesAndLevies": 15.2
+      },
+      {
+        "date": "2025-06-19T12:00:00.000Z",
+        "dateUTC": "2025-06-19T10:00:00.000Z",
+        "price": -5.22,
+        "grossKwhPrice": -6.21,
+        "mWhPriceInEuros": -52.21,
+        "hour": "12",
+        "taxesAndLevies": 17.76,
+        "priceWithTaxesAndLevies": 12.54
+      },
+      {
+        "date": "2025-06-19T13:00:00.000Z",
+        "dateUTC": "2025-06-19T11:00:00.000Z",
+        "price": -6.54,
+        "grossKwhPrice": -7.78,
+        "mWhPriceInEuros": -65.44,
+        "hour": "13",
+        "taxesAndLevies": 17.51,
+        "priceWithTaxesAndLevies": 10.97
+      },
+      {
+        "date": "2025-06-19T14:00:00.000Z",
+        "dateUTC": "2025-06-19T12:00:00.000Z",
+        "price": -6.49,
+        "grossKwhPrice": -7.72,
+        "mWhPriceInEuros": -64.95,
+        "hour": "14",
+        "taxesAndLevies": 17.52,
+        "priceWithTaxesAndLevies": 11.03
+      },
+      {
+        "date": "2025-06-19T15:00:00.000Z",
+        "dateUTC": "2025-06-19T13:00:00.000Z",
+        "price": -3.97,
+        "grossKwhPrice": -4.73,
+        "mWhPriceInEuros": -39.79,
+        "hour": "15",
+        "taxesAndLevies": 18,
+        "priceWithTaxesAndLevies": 14.03
+      },
+      {
+        "date": "2025-06-19T16:00:00.000Z",
+        "dateUTC": "2025-06-19T14:00:00.000Z",
+        "price": -0.49,
+        "grossKwhPrice": -0.58,
+        "mWhPriceInEuros": -4.95,
+        "hour": "16",
+        "taxesAndLevies": 18.66,
+        "priceWithTaxesAndLevies": 18.17
+      },
+      {
+        "date": "2025-06-19T17:00:00.000Z",
+        "dateUTC": "2025-06-19T15:00:00.000Z",
+        "price": 0.23,
+        "grossKwhPrice": 0.28,
+        "mWhPriceInEuros": 2.3,
+        "hour": "17",
+        "taxesAndLevies": 18.8,
+        "priceWithTaxesAndLevies": 19.03
+      },
+      {
+        "date": "2025-06-19T18:00:00.000Z",
+        "dateUTC": "2025-06-19T16:00:00.000Z",
+        "price": 8.04,
+        "grossKwhPrice": 9.56,
+        "mWhPriceInEuros": 80.33,
+        "hour": "18",
+        "taxesAndLevies": 20.28,
+        "priceWithTaxesAndLevies": 28.32
+      },
+      {
+        "date": "2025-06-19T19:00:00.000Z",
+        "dateUTC": "2025-06-19T17:00:00.000Z",
+        "price": 11.85,
+        "grossKwhPrice": 14.1,
+        "mWhPriceInEuros": 118.47,
+        "hour": "19",
+        "taxesAndLevies": 21.01,
+        "priceWithTaxesAndLevies": 32.86
+      },
+      {
+        "date": "2025-06-19T20:00:00.000Z",
+        "dateUTC": "2025-06-19T18:00:00.000Z",
+        "price": 13.89,
+        "grossKwhPrice": 16.53,
+        "mWhPriceInEuros": 138.85,
+        "hour": "20",
+        "taxesAndLevies": 21.39,
+        "priceWithTaxesAndLevies": 35.28
+      },
+      {
+        "date": "2025-06-19T21:00:00.000Z",
+        "dateUTC": "2025-06-19T19:00:00.000Z",
+        "price": 14.18,
+        "grossKwhPrice": 16.88,
+        "mWhPriceInEuros": 141.8,
+        "hour": "21",
+        "taxesAndLevies": 21.45,
+        "priceWithTaxesAndLevies": 35.63
+      },
+      {
+        "date": "2025-06-19T22:00:00.000Z",
+        "dateUTC": "2025-06-19T20:00:00.000Z",
+        "price": 12.97,
+        "grossKwhPrice": 15.43,
+        "mWhPriceInEuros": 129.66,
+        "hour": "22",
+        "taxesAndLevies": 21.22,
+        "priceWithTaxesAndLevies": 34.19
+      },
+      {
+        "date": "2025-06-19T23:00:00.000Z",
+        "dateUTC": "2025-06-19T21:00:00.000Z",
+        "price": 10.89,
+        "grossKwhPrice": 12.96,
+        "mWhPriceInEuros": 108.89,
+        "hour": "23",
+        "taxesAndLevies": 20.83,
+        "priceWithTaxesAndLevies": 31.72
+      }
+    ]
+  },
+  "year": {
+    "averagePrice": 29.96,
+    "prices": [
+      {
+        "price": 6.87,
+        "month": "2025-05",
+        "taxesAndLevies": 20.06,
+        "priceWithTaxesAndLevies": 26.93
+      },
+      {
+        "price": 7.79,
+        "month": "2025-04",
+        "taxesAndLevies": 20.24,
+        "priceWithTaxesAndLevies": 28.03
+      },
+      {
+        "price": 9.46,
+        "month": "2025-03",
+        "taxesAndLevies": 20.55,
+        "priceWithTaxesAndLevies": 30.01
+      },
+      {
+        "price": 12.85,
+        "month": "2025-02",
+        "taxesAndLevies": 21.2,
+        "priceWithTaxesAndLevies": 34.05
+      },
+      {
+        "price": 11.41,
+        "month": "2025-01",
+        "taxesAndLevies": 20.92,
+        "priceWithTaxesAndLevies": 32.33
+      },
+      {
+        "price": 10.83,
+        "month": "2024-12",
+        "taxesAndLevies": 20.81,
+        "priceWithTaxesAndLevies": 31.64
+      },
+      {
+        "price": 11.39,
+        "month": "2024-11",
+        "taxesAndLevies": 20.92,
+        "priceWithTaxesAndLevies": 32.31
+      },
+      {
+        "price": 8.61,
+        "month": "2024-10",
+        "taxesAndLevies": 20.39,
+        "priceWithTaxesAndLevies": 29
+      },
+      {
+        "price": 7.83,
+        "month": "2024-09",
+        "taxesAndLevies": 20.24,
+        "priceWithTaxesAndLevies": 28.07
+      },
+      {
+        "price": 8.2,
+        "month": "2024-08",
+        "taxesAndLevies": 20.31,
+        "priceWithTaxesAndLevies": 28.51
+      },
+      {
+        "price": 6.77,
+        "month": "2024-07",
+        "taxesAndLevies": 20.04,
+        "priceWithTaxesAndLevies": 26.81
+      },
+      {
+        "price": 10.89,
+        "month": "2024-06",
+        "taxesAndLevies": 20.83,
+        "priceWithTaxesAndLevies": 31.72
+      }
+    ]
+  }
+}

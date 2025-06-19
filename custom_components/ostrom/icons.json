@@ -1,6 +1,6 @@
 {
   "services": {
-    "get_price_data": {
+    "spot_prices": {
       "service": "mdi:cash-fast"
     }
   }

@@ -1,7 +1,5 @@
 """Ostrom REST API client."""
 
-import base64
-from datetime import UTC, datetime, timedelta
 from typing import TypedDict
 from urllib.parse import urlencode, urljoin
 
@@ -10,126 +8,137 @@ from requests import Response
 
 from homeassistant.exceptions import HomeAssistantError
 
-from .const import (
-    OSTROM_API_URL_PROD,
-    OSTROM_API_URL_TEST,
-    OSTROM_AUTH_URL_PROD,
-    OSTROM_AUTH_URL_TEST,
-)
+
+class OstromTariff(TypedDict, total=False):
+    """Typed ostrom tariff dict."""
+
+    productCode: str | None
+    tariff: float | None
+    savings: float | None
+    basicFee: float | None
+    networkFee: float | None
+    unitPricePerkWH: float | None
+    tariffWithStormPreisBremse: float | None
+    stromPreisBremseUnitPrice: float | None
+    accumulatedUnitPriceWithStromPreisBremse: float | None
+    unitPrice: float | None
+    energyConsumption: float | None
+    basePriceBrutto: float | None
+    workingPriceBrutto: float | None
+    workingPriceNetto: float | None
+    meterChargeBrutto: float | None
+    workingPricePowerTax: float | None
 
 
-class OstromPrice(TypedDict, total=False):
-    """Typed ostrom price dict."""
+class OstromSpotPriceHourly(TypedDict, total=False):
+    """Typed ostrom spot price dict."""
 
     date: str | None
-    netMwhPrice: float | None
-    netKwhPrice: float | None
+    dateUTC: str | None
+    price: float | None
     grossKwhPrice: float | None
-    netKwhTaxAndLevies: float | None
-    grossKwhTaxAndLevies: float | None
-    netMonthlyOstromBaseFee: float | None
-    grossMonthlyOstromBaseFee: float | None
-    netMonthlyGridFees: float | None
-    grossMonthlyGridFees: float | None
+    mWhPriceInEuros: float | None
+    hour: int | None
+    taxesAndLevies: float | None
+    priceWithTaxesAndLevies: float | None
+
+
+class OstromSpotPriceMonthly(TypedDict, total=False):
+    """Typed ostrom spot price dict."""
+
+    price: float | None
+    month: str | None
+    taxesAndLevies: float | None
+    priceWithTaxesAndLevies: float | None
 
 
 class OstromClient:
     """Class to hold client information for the Ostrom API."""
 
-    @property
-    def client_id(self) -> str:
-        """Returns client id."""
-        return self._client_id
-
-    def __init__(self, client_id: str, client_secret: str, sandbox_mode: bool) -> None:
+    def __init__(self, api_url: str) -> None:
         """Initialize the OstromClientInfo class."""
-        self._client_id = client_id
-        self._client_secret = client_secret
-        self._sandbox_mode = sandbox_mode
 
-        self._access_token: str | None = None
-        self._expires_at: datetime = datetime.min
+        self._api_url = api_url
 
-        self._auth_url = (
-            OSTROM_AUTH_URL_TEST if self._sandbox_mode else OSTROM_AUTH_URL_PROD
-        )
-        self._api_url = (
-            OSTROM_API_URL_TEST if self._sandbox_mode else OSTROM_API_URL_PROD
-        )
+    async def spot_prices_hourly(
+        self, city_id: int, zip_code: int
+    ) -> list[OstromSpotPriceHourly]:
+        """Fetch the current price from the Ostrom API."""
 
-    async def authenticate(self) -> bool:
-        """Test if we can authenticate with the host."""
-
-        if self._expires_at > datetime.now() and self._access_token:
-            return True
-
-        payload = {"grant_type": "client_credentials"}
-
-        auth = f"{self._client_id}:{self._client_secret}"
-
-        headers = {
-            "accept": "application/json",
-            "content-type": "application/x-www-form-urlencoded",
-            "authorization": "Basic "
-            + base64.b64encode(auth.encode("utf-8")).decode("utf-8"),
+        params = {
+            "cityId": city_id,
+            "postalCode": zip_code,
         }
 
-        url = urljoin(self._auth_url, "oauth2/token")
+        url = urljoin(self._api_url, "v1/spot-prices/ostrom-product-tariff")
+        url = f"{url}?{urlencode(params)}"
 
         async with (
             aiohttp.ClientSession() as session,
-            session.post(
-                url,
-                headers=headers,
-                data=payload,
-            ) as response,
+            session.get(url) as response,
         ):
             if not response.ok:
-                return False
-            data = await response.json()
-            self._access_token = data["access_token"]
-            self._expires_at = datetime.now() + timedelta(seconds=data["expires_in"])
-            return True
+                text = await response.text()
+                raise OstromRestBadRequestException(
+                    f"Bad request to Ostrom API: {text}"
+                )
+            data = (await response.json())["day"]["prices"]
+            return [OstromSpotPriceHourly(**entry) for entry in data]
 
-    async def fetch_ostrom_price_data(
-        self,
-        zip_code: str,
-        start_date: datetime = datetime.min,
-        end_date: datetime = datetime.min,
-    ) -> list[OstromPrice]:
-        """Fetch price data from the Ostrom API."""
+        return []
 
-        if start_date == end_date == datetime.min:
-            start_date = datetime.now(UTC).replace(minute=0, second=0, microsecond=0)
-            end_date = start_date + timedelta(hours=12)
+    async def spot_prices_monthly(
+        self, city_id: int, zip_code: int
+    ) -> list[OstromSpotPriceMonthly]:
+        """Fetch the current price from the Ostrom API."""
 
         params = {
-            "startDate": start_date.isoformat(timespec="milliseconds") + "Z",
-            "endDate": end_date.isoformat(timespec="milliseconds") + "Z",
-            "resolution": "HOUR",
-            "zip": zip_code,
+            "cityId": city_id,
+            "postalCode": zip_code,
         }
 
-        url = urljoin(self._api_url, "spot-prices")
+        url = urljoin(self._api_url, "v1/spot-prices/ostrom-product-tariff")
         url = f"{url}?{urlencode(params)}"
 
-        if await self.authenticate():
-            headers = {
-                "accept": "application/json",
-                "authorization": f"Bearer {self._access_token}",
-            }
+        async with (
+            aiohttp.ClientSession() as session,
+            session.get(url) as response,
+        ):
+            if not response.ok:
+                text = await response.text()
+                raise OstromRestBadRequestException(
+                    f"Bad request to Ostrom API: {text}"
+                )
+            data = (await response.json())["year"]["prices"]
+            return [OstromSpotPriceMonthly(**entry) for entry in data]
 
-            async with (
-                aiohttp.ClientSession() as session,
-                session.get(url, headers=headers) as response,
-            ):
-                if not response.ok:
-                    text = await response.text()
-                    raise OstromRestBadRequestException(
-                        f"Bad request to Ostrom API: {text}"
-                    )
-                data = (await response.json())["data"]
-                return [OstromPrice(**entry) for entry in data]
+        return []
+
+    async def get_current_price(
+        self, city_id: int, usage: int, zip_code: int
+    ) -> list[OstromTariff] | None:
+        """Fetch the current price from the Ostrom API."""
+
+        params = {
+            "cityId": city_id,
+            "usage": usage,
+            "postalCode": zip_code,
+        }
+
+        url = urljoin(self._api_url, "v1/tariffs/city-id")
+        url = f"{url}?{urlencode(params)}"
+
+        async with (
+            aiohttp.ClientSession() as session,
+            session.get(url) as response,
+        ):
+            if not response.ok:
+                text = await response.text()
+                raise OstromRestBadRequestException(
+                    f"Bad request to Ostrom API: {text}"
+                )
+            data = (await response.json())["ostrom"]
+            return [OstromTariff(**entry) for entry in data]
 
         return []
 

@@ -1,19 +1,22 @@
 """Helper functions for Ostrom integration in Home Assistant."""
 
 import datetime
-import re
 
 import voluptuous as vol
 
 from homeassistant.util.json import JsonValueType
 
 from .const import DOMAIN, NAME
-from .ostrom_rest import OstromPrice
 
 
-def is_valid_plz(plz: str) -> bool:
-    """Check if the provided postal code is valid."""
-    return bool(re.fullmatch(r"\d{5}", plz))
+def validate_zip_code(v: int) -> bool:
+    """Validate that the zip code is a valid Ostrom zip code."""
+    return len(str(v)) == 5
+
+
+def validate_city_id(v: int) -> bool:
+    """Validate that the city ID is a valid Ostrom city ID."""
+    return len(str(v)) == 4
 
 
 def validate_iso_datetime(value):
@@ -26,9 +29,9 @@ def validate_iso_datetime(value):
         ) from e
 
 
-def get_identifier(zip_code: str, client_id: str) -> set[tuple[str, str]]:
+def get_identifier(zip_code: str, city_id: str) -> set[tuple[str, str]]:
     """Generate a unique identifier for the Ostrom integration based on the config entry."""
-    identifier = f"{zip_code}_{client_id}"
+    identifier = f"{zip_code}_{city_id}"
     return {(DOMAIN, identifier)}
 
 
@@ -43,6 +46,6 @@ def _to_json_value(val: object) -> JsonValueType:
     return str(val)
 
 
-def convert_prices_to_json(prices: list[OstromPrice]) -> list[JsonValueType]:
+def convert_prices_to_json(prices) -> list[JsonValueType]:
     """Convert a list of OstromPrice dictionaries to a list of JSON-compatible dictionaries."""
     return [{k: _to_json_value(v) for k, v in price.items()} for price in prices]

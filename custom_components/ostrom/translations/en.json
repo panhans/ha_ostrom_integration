@@ -6,41 +6,36 @@
         "error": {
             "cannot_connect": "Failed to connect",
             "invalid_auth": "Invalid authentication",
+            "invalid_city_id": "Invalid City ID",
             "invalid_zip_code": "Invalid ZIP code",
             "unknown": "Unexpected error"
         },
         "step": {
             "user": {
                 "data": {
-                    "client_id": "Client ID",
-                    "client_secret": "Client Secret",
-                    "end": "End",
-                    "sandbox_mode": "Sandbox/Test Mode",
-                    "start": "Start",
+                    "city_id": "City ID",
+                    "tariff": "Tariff",
+                    "usage": "Usage (kWh)",
                     "zip_code": "ZIP Code"
                 },
-                "description": "Please create your client ID and client secret here: [Ostrom Developer Protal]({link})."
+                "description": "Please visit the [Ostrom Webseite](https://www.ostrom.de/calculate-tariff), perform a price check, and then copy the City ID from the URL."
             }
         }
     },
     "services": {
-        "get_price_data": {
-            "description": "Fetches price data between a start and end date.",
+        "spot_prices": {
+            "description": "Fetches price data hourly of a day or monthly of a year.",
             "fields": {
-                "end": {
-                    "description": "The end of the time range in ISO format",
-                    "name": "End Date"
-                },
                 "entity_id": {
                     "description": "The entity ID of the Ostrom sensor",
                     "name": "Entity ID"
                 },
-                "start": {
-                    "description": "The beginning of the time range in ISO format (e.g., 2025-06-13T10:00:23)",
-                    "name": "Start Date"
+                "resolution": {
+                    "description": "Daily or monthly resolution",
+                    "name": "Resolution"
                 }
             },
-            "name": "Get Price Data"
+            "name": "Spot Prices"
         }
     }
 }
