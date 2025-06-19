@@ -138,7 +138,7 @@ class OstromPriceSensor(SensorEntity):
         self._attr_native_value = None
         self._delegate: OstromTariff | None = None
 
-    async def async_update(self, hass: HomeAssistant) -> None:
+    async def async_update(self) -> None:
         """Fetch new state data for the sensor."""
 
         tariffs = (
