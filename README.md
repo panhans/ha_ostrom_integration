@@ -4,9 +4,11 @@ This integration provides a sensor and a service for querying electricity prices
 With the service, you can query the daily prices. Based on this, you can create automations to start devices, for example, to run household appliances like washing machines when electricity prices are low.
 
 <div align="center">
+  
 [![Open your Home Assistant instance and open a repository inside the Home Assistant Community Store.](https://my.home-assistant.io/badges/hacs_repository.svg)](https://my.home-assistant.io/redirect/hacs_repository/?owner=panhans&repository=ha_ostrom_integration&category=Integration)
 
 [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/Q5Q3QEH52)
+
 </div>
 
 
